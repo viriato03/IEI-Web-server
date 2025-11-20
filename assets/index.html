@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">  <!--dizer ao browser que o site esta em ingles-->
+<head>
+    <meta charset="UTF-8">    <!--dizer ao browser o formato como cse guardam os caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEI-Project_1 </title>
+    <script src="https://cdn.tailwindcss.com"></script> <!--importa o tailwind-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <!--importa o font-awesome-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif; /* font usada ao longo do site */
+        }
+        h1, h2, h3, blockquote {
+            font-family: 'Merriweather', serif; /*font usada em titulos e quotes*/
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /*comportamento das imagens selecionadas*/
+        .image-hover-zoom {
+            overflow: hidden; 
+        }
+        .image-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .image-hover-zoom:hover img {
+            transform: scale(1.10);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased"> <!--cor do backgowund e texto geral-->
+
+    <!--navbar-->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <img src="deti5.png"
+                     alt="Deti"
+                     class="h-8">
+                    <span class="font-bold text-xl tracking-tight text-gray-900">IEI-Project_1</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#Ex1" class="text-gray-500 hover:text-indigo-600 transition-colors">Ex1</a>
+                    <a href="#Ex2" class="text-gray-500 hover:text-indigo-600 transition-colors">Ex2</a>
+                </div>
+                <!--Mobile Menu-->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--Mobile Menu-->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#Ex1" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">Ex1</a>
+                <a href="#Ex2" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 rounded-md">Ex2</a>
+            </div>
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="ua.jpg" 
+                 alt="Imagem Ua" 
+                 class="w-full h-full object-cover opacity-50">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-50/20"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center sm:px-6 lg:px-8">
+            <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 text-xs font-semibold tracking-wider mb-6 uppercase">
+                Visual Storytelling
+            </span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Where <span class="text-indigo-600">Text</span> Meets <span class="text-indigo-600">Imagery</span>.
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                A simple, elegant HTML foundation designed to showcase your written content alongside compelling visuals. Perfect for blogs, portfolios, or landing pages.
+            </p>
+            <div class="flex justify-center gap-4">
+                <button onclick="document.getElementById('Ex1').scrollIntoView()" class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition shadow-lg hover:shadow-xl font-medium">
+                    Explore Layout
+                </button>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ex1/ Grid Section -->
+    <section id="Ex1" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Visual Harmony</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Images are handled with responsive sizing and elegant hover effects to keep the user engaged.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!--Card 1-->
+                <div class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                    <div class="image-hover-zoom h-64 relative">
+                        <img src="F1.jpg" 
+                             alt="F1-Ferrari_is_Better" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded">
+                            Ferrari 
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Serene Landscapes</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            The mountains reflected in the calm waters create a perfect symmetry. This layout allows caption text to flow naturally below the visual element.
+                        </p>
+                        <a href="#" class="text-indigo-600 text-sm font-semibold hover:underline">Read Story &rarr;</a>
+                    </div>
+                </div>
+
+                <!--Card 2-->
+                <div class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                    <div class="image-hover-zoom h-64 relative">
+                        <img src="clarkson-1.jpg" 
+                             alt="CLARKSOOOOON" 
+                             class="w-full h-full object-cover">
+                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded">
+                            Genuine People
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Human Connection</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Capturing emotion through photography requires timing and patience. Notice how the text hierarchy supports the image without overwhelming it.
+                        </p>
+                        <a href="#" class="text-indigo-600 text-sm font-semibold hover:underline">Read Story &rarr;</a>
+                    </div>
+                </div>
+                <!--Card 3-->
+                <div class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                    <div class="image-hover-zoom h-64 relative">
+                        <img src="clarkson-1.jpg" 
+                             alt="CLARKSOOOOON" 
+                             class="w-full h-full object-cover">
+                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded">
+                            Genuine People
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Human Connection</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Capturing emotion through photography requires timing and patience. Notice how the text hierarchy supports the image without overwhelming it.
+                        </p>
+                        <a href="#" class="text-indigo-600 text-sm font-semibold hover:underline">Read Story &rarr;</a>
+                    </div>
+                </div>
+                <!--Card 4-->
+                <div class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                    <div class="image-hover-zoom h-64 relative">
+                        <img src="clarkson-1.jpg" 
+                             alt="CLARKSOOOOON" 
+                             class="w-full h-full object-cover">
+                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded">
+                            Genuine People
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Human Connection</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Capturing emotion through photography requires timing and patience. Notice how the text hierarchy supports the image without overwhelming it.
+                        </p>
+                        <a href="#" class="text-indigo-600 text-sm font-semibold hover:underline">Read Story &rarr;</a>
+                    </div>
+                </div>
+                <!--Card 5-->
+                <div class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                    <div class="image-hover-zoom h-64 relative">
+                        <img src="clarkson-1.jpg" 
+                             alt="CLARKSOOOOON" 
+                             class="w-full h-full object-cover">
+                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded">
+                            Genuine People
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Human Connection</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Capturing emotion through photography requires timing and patience. Notice how the text hierarchy supports the image without overwhelming it.
+                        </p>
+                        <a href="#" class="text-indigo-600 text-sm font-semibold hover:underline">Read Story &rarr;</a>
+                    </div>
+                </div>
+
+                <!--Card 6-->
+                <div class="group bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                    <div class="image-hover-zoom h-64 relative">
+                        <img src="terminal-shop.png" 
+                             alt="Buy_Coffe_From_Terminal" 
+                             class="w-full h-full object-cover">
+                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur text-xs font-bold px-2 py-1 rounded">
+                            Shop
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors">Modern Architecture</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                            Clean lines and geometric shapes in urban environments. This card component is versatile and can hold various amounts of text content.
+                        </p>
+                        <a href="#" class="text-indigo-600 text-sm font-semibold hover:underline">Read Story &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--EX2-->
+    <section id="Ex2" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-start">
+                
+                <!-- Ex2 Conteudo-->
+                <div class="lg:w-2/3">
+                    <span class="text-indigo-600 font-bold tracking-wide uppercase text-sm">Editorial</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">The Art of Minimalist Web Design</h2>
+                    
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="mb-4">
+                            When designing for the web, the balance between text and imagery is crucial. Too much text can overwhelm the reader, while too many images can distract from the core message. 
+                        </p>
+                        <p class="mb-6">
+                            <strong>Why does this matter?</strong> Because user retention correlates directly with visual hierarchy. By using ample whitespace (padding and margins) and distinct typography, we guide the user's eye down the page.
+                        </p>
+                        
+                        <blockquote class="border-l-4 border-indigo-600 pl-4 italic text-gray-800 text-lg my-8">
+                            "Design is not just what it looks like and feels like. Design is how it works."
+                        </blockquote>
+
+                        <p class="mb-4">
+                            This layout uses <span class="bg-indigo-100 text-indigo-800 px-1 rounded">Tailwind CSS</span> to handle responsiveness. Whether you view this on a mobile phone or a large 4k monitor, the text wraps correctly, and images scale to fit their containers.
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2 mb-6">
+                            <li>Responsive images using <code>w-full</code> and <code>object-cover</code>.</li>
+                            <li>Readable typography with Inter and Merriweather fonts.</li>
+                            <li>Interactive hover states to provide feedback.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sidebar Image -->
+                <div class="lg:w-1/3 w-full sticky top-24">
+                    <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                        <img src="minecraft.avif" 
+                             alt="Minecraft-king" 
+                             class="rounded-lg w-full h-64 object-cover mb-4">
+                        <div class="text-sm text-gray-500 italic mb-4">
+                            Minimalism helps focus the user's attention on what truly matters: content.
+                        </div>
+                         <a href="https://www.minecraft.net/en-us/download" target="_blank" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition shadow-lg hover:shadow-xl font-medium flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-cube"></i> Download Minecraft
+                        </a>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <h4 class="text-2xl font-bold tracking-tight mb-2">IEI-Project_1</h4>
+                <p class="text-gray-400 text-sm">Built with HTML, Tailwind & Love.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-gray-600 text-xs mt-8">
+            &copy; CarlosBaco Corporation
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Adiciona uma Shadow quando nao esta no topo
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-2xl');
+            } else {
+                nav.classList.remove('shadow-2xl');
+            }
+        });
+    </script>
+</body>
+</html>
