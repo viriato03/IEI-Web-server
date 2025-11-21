@@ -1,25 +1,23 @@
 vcl 4.1;
 
-# Define the backend (Caddy)
+# Define a backend (Caddy)
 backend default {
-    .host = "caddy";  # This matches the service name in compose.yml
-    .port = "80";     # Caddy listens on port 80 inside the container
+    .host = "caddy";  
+    .port = "80";     
 }
 
 sub vcl_recv {
-    # Happens when a request is received
-    # Setup logic here (e.g., bypass cache for specific URLs)
+    # Remove TODOS os cookies para garantir que a página seja cacheada
+    unset req.http.Cookie;
 }
 
 sub vcl_backend_response {
-    # Happens after we get a response from Caddy, before caching it
-    # You can set the Time To Live (TTL) here
+    forca o varnish a guardar a cache durante 5 min
     set beresp.ttl = 5m;
 }
 
 sub vcl_deliver {
-    # Happens when sending the response to the client
-    # We add a header to see if it was a Cache HIT or MISS
+    # Verifica se a cache esta a funcionar
     if (obj.hits > 0) {
         set resp.http.X-Cache = "HIT";
     } else {
