@@ -12,7 +12,7 @@ sub vcl_recv {
 }
 
 sub vcl_backend_response {
-    forca o varnish a guardar a cache durante 5 min
+    # forca o varnish a guardar a cache durante 5 min
     set beresp.ttl = 5m;
 }
 
