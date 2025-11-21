@@ -3,31 +3,24 @@ services:
     image: caddy:2.10-alpine
     container_name: caddy
     restart: unless-stopped
-    ports:
-      - "8080:80"
     networks:
       - safenet
     volumes:
       - ./assets:/usr/share/caddy
 
-  squid:
-    image: openeuler/squid:7.3-oe2403sp2
-    container_name: squid-accelerator
+  varnish:
+    image: varnish:8.0.0
+    container_name: varnish-accelerator
     ports:
-      - "80:3128"
+      - "80:80"
     networks:
       - safenet
     volumes:
-      - ./squid.conf:/usr/local/squid/etc/squid.conf:ro
-      - squid_cache:/var/spool/squid
-      - logs:/var/log/squid
+      - ./varnish/default.vcl:/etc/varnish/default.vcl:ro
     depends_on:
       - caddy
-
-volumes:
-  squid_cache:
-  logs:
-  
+    environment:
+      - VARNISH_SIZE=256M
 
 networks:
   safenet:
